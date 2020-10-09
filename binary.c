@@ -43,11 +43,16 @@ void imprimir (NoArvore* No, int quantidadeDeNo, int first) {
       int i;
       for (i = 0; i < (quantidadeDeNo - first); i++)
         printf("   ");
-      printf("%d\n", No->valorDoNo);
+      printf("%d", No->valorDoNo);
     }
 
     if(No->esquerda != NULL) {
       int contadorEsquerda;
+      printf("\n");
+      for (contadorEsquerda = 0; contadorEsquerda < (quantidadeDeNo - (first + 1)); contadorEsquerda++){
+        printf("   ");
+      }
+      printf("  /\n");
       for (contadorEsquerda = 0; contadorEsquerda < (quantidadeDeNo - (first + 1)); contadorEsquerda++){
         printf("   ");
       }
@@ -116,6 +121,7 @@ void imprimirSemQuebra (NoArvore* No, int quantidadeDeNo, int first) {
   }
 }
 
+
 int main() {
   printf("******************************************************\n");
   printf("\tLhe apresento minha arvore binaria:\n");
@@ -138,6 +144,5 @@ int main() {
   raiz = inserir(9, raiz);
   raiz = inserir(6, raiz);
   imprimir(raiz, quantidadeDeNo, 1);
-  
   
 }
